@@ -1,0 +1,27 @@
+name: resume-screening-env
+description: Resume screening OpenEnv environment
+version: 1.0
+
+entrypoint: app:app
+
+actions:
+  type: string
+  enum:
+    - shortlist
+    - reject
+
+observations:
+  type: object
+  properties:
+    resume:
+      type: string
+    job:
+      type: string
+
+reward:
+  type: number
+
+tasks:
+  - easy
+  - medium
+  - hard
